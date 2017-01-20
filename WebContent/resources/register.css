@@ -1,4 +1,21 @@
 @CHARSET "ISO-8859-1";
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+    background-color: lightblue;
+}
+</style>
+</head>
+<body>
+
+
+
+
+</body>
+</html>
+
 body {
     background-color: #eee;
 }
@@ -15,3 +32,16 @@ body {
     margin-left: 5em;
     margin-bottom: 1em;
 }
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+    background-color: lightblue;
+}
+</style>
+</head>
+<body>
+
+</body>
+</html>
