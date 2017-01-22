@@ -1,5 +1,5 @@
 app.controller('commentctrl', [ '$scope', '$http','$rootScope', function($scope, $http,$rootScope) {
-	var BASE_URL = 'http://localhost:8181/ChatusBackend';
+	var BASE_URL = 'http://localhost:8088/CollaborationBackend';
 	$scope.iforum=$rootScope.individualforums;
 	//console.log(individualforums)
 	$scope.submit=function(id){

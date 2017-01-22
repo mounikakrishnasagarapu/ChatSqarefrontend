@@ -1,5 +1,5 @@
 app.controller('forumctrl', [ '$scope', '$http','$location','$rootScope', function($scope, $http,$location,$rootScope) {
-	var BASE_URL = 'http://localhost:8181/ChatusBackend';
+	var BASE_URL = 'http://localhost:8088/CollaborationBackend';
 	
 	$scope.getAllForum= function() {
 		console.log("get all forum")

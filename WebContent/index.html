@@ -41,12 +41,15 @@ img {
 <script type="text/javascript" src="Chat/chatService.js"></script>
 <script type="text/javascript" src="Forum/forumctrl.js"></script>
 <link rel="stylesheet" href="resources/navbar.css">
+<link rel="stylesheet" href="resources/blog.css">
 
 <link rel="stylesheet" href="resources/register.css">
 
 <link rel="stylesheet" href="resources/user.css">
 <link rel="stylesheet" href="resources/login.css">
+<link rel="stylesheet" href="resources/comments.css">
 <script type="text/javascript" src="resources/login.js"></script>
+
 
 
 
@@ -55,41 +58,40 @@ img {
 		<center>ChatSqure.Com</center>
 	</h1>
 <body data-ng-app="myApp">
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <title>ChatSqureFrontend</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-</head>
-<body>
+
+
 
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="#">chat square</a>
+      <a class="navbar-brand" href="#chat square">chat square</a>
     </div>
     <ul class="nav navbar-nav">
-      <li class="active"><a href="#">Home</a></li>
-      <li class="active"><a href="#">Blog</a></li>
-      <li class="active"><a href="#">Forum</a></li>
-      <li class="active"><a href="#">Find friends</a></li>
-      <li class="active"><a href="#">Chat</a></li>
-      <li class="active"><a href="#">Find jobs</a></li>
+      <li class="active"><a href="#home">Home</a></li>
+      <li class="active"><a href="#blog">Blog</a></li>
+      <li class="active"><a href="#forum">Forum</a></li>
+      <li class="active"><a href="#users">Find friends</a></li>
+      <li class="active"><a href="#chat">Chat</a></li>
+      <li class="active"><a href="#jobs">Find jobs</a></li>
              </ul>
-      </li>
-         </ul>
+     
     <ul class="nav navbar-nav navbar-right">
-      <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-      <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-    </ul>
-  </div>
-</nav>
-  <div data-ng-view></div>
-
+					 <li><a href="#register" data-ng-hide="globals.currentUser.islogged"><i class="glyphicon glyphicon-user"></i></a></li>
+					<li><a href="#login"
+						data-ng-hide="globals.currentUser.islogged"><i class="glyphicon glyphicon-log-in"></i></a></li>
+							<!-- <li><a href="#login" data-ng-hide="globals.currentUser.islogged"><i class="glyphicon glyphicon-log-in"></i></a></li> -->
+                             <li style="padding-top:15px;" data-ng-show="globals.currentUser.islogged">Welcome:{{globals.currentUser.username}}</li>
+                             <li data-ng-show="globals.currentUser.islogged"><a href="#myprofile">My Profile</a></li>
+                              <li data-ng-show="globals.currentUser.islogged"><a href=""  data-ng-controller="LoginController" data-ng-click="vm.logout()"></a></li>
+							</ul> 
+					</div>
+		</nav>
+	</div>
+	
+	<div data-ng-view> </div>
+	
 </body>
+
 </html>
+
 
