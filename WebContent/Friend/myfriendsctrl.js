@@ -1,5 +1,5 @@
 app.controller('myfriendctrl',['$scope','$http',function($scope,$http){
-	var BASE_URL = 'http://localhost:8088/CollaborationBackend';
+	var BASE_URL = 'http://localhost:8088/CollaborationBackend/';
 	
 	$scope.getmyfriends=function(){
 		$http({

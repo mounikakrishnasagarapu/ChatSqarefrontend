@@ -1,33 +1,72 @@
-app.controller('commentctrl', [ '$scope', '$http','$rootScope', function($scope, $http,$rootScope) {
-	var BASE_URL = 'http://localhost:8088/CollaborationBackend';
-	$scope.iforum=$rootScope.individualforums;
-	//console.log(individualforums)
-	$scope.submit=function(id){
-		$scope.forumcomment={
-				comment:$scope.comment
+app.controller('forumctrl', [ '$scope', '$http','$location','$rootScope', 
+	function($scope, $http,$location,$rootScope) {
+	    var BASE_URL = 'http://localhost:8088/CollaborationBackend';
+	
+	$scope.getAllForum= function() {
+		console.log("get all forum")
+		$http({
+			method : 'GET',
+			url : BASE_URL+'/forum'
+		}).success(function(data, status, headers, config) {
+			$scope.forums=data;
+			//alert(data); 
+		}).error(function(data, status, headers, config) {
+			alert("Error");
+		});
+	};
+	$scope.submit = function() {
+		$scope.forum = {	
+			name : $scope.name,
+			topic:$scope.topic,
+			userid:$scope.userid,
+			doc: $scope.doc,
+			description:$scope.description
 		}
 		$http({
-			method:'POST',
-			url:BASE_URL+'/commentforum/'+id ,
-			data:$scope.forumcomment
+			method : 'POST',
+			url : BASE_URL + '/createforum',
+			data : $scope.forum
 		}).success(function(data, status, headers, config) {
-			$scope.comment='';
-		})
-	}
-	$scope.getcomment=function(id){
+			$scope.name='';
+			$scope.topic='';
+			$scope.userid='';
+			$scope.doc='';
+			$scope.description='';
+			
+		}).error(function(data,status,headers,config)
+				{
+			alert("error");
+				});
+	};
+		
+	$scope.deleteforum=function(id){
+		
 		$http({
-			method:'GET',
-			url:BASE_URL+'/getforumcomment/'+id
+			method:'DELETE',
+		url:BASE_URL+'/deleteforum/'+id
 		}).success(function(data,status,headers,config){
-			$scope.comments=data;
+			$scope.getAllForum();
 		})
 	}
-	$scope.getuser=function(id){
+	
+	$scope.getforum=function(id){
+		
+		console.log("iforum")
 		$http({
-			method: 'GET',
-			url: BASE_URL+'/oneuser/'+id
+			method: "GET",
+			url:BASE_URL+'/individualforum/'+id,
 		}).success(function(data,status,headers,config){
-			$scope.users=data;
-		})
+			$location.path('/individualforum');
+			$rootScope.individualforums=data;
+			console.log(data)
+		}).error(function(data, status, headers, config) {
+			alert("Error");
+		});
+	};
+	$scope.editforum=function(id,name,topic,description){
+		$scope.id=id;
+		$scope.name=name;
+		$scope.topic=topic;
+		$scope.description=description;
 	}
-}])
+}]);

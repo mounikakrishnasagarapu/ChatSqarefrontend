@@ -1,4 +1,4 @@
- app.controller('LoginController', LoginController);
+app.controller('LoginController', LoginController);
 
     LoginController.$inject = ['$location','AuthenticationService','$rootScope'];
  
@@ -9,11 +9,7 @@
         vm.login = login;
         vm.logout = logout;
 
-       /* (function initController() {
-        	console.log("reset")
-            // reset login status
-            AuthenticationService.ClearCredentials();
-        })();*/
+      
  
         function login() {
            

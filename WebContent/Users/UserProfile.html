@@ -8,7 +8,6 @@
     position: absolute;
     left: -9999px;
 }
-
 #profile-image1 {
     cursor: pointer;
   
@@ -39,7 +38,7 @@
                 
     <input id="profile-image-upload"  class="hidden"  
     onchange="angular.element(this).scope().uploadFile(this.files)" type="file">
-<div style="color:#999;" >click here to change profile image</div>
+<div style="color:#999;" >click here to change your profile image</div>
                 <!--Upload Image Js And Css-->       
                      </div>
               
@@ -49,7 +48,7 @@
             </div>
             <div class="col-sm-6">
             <h4 style="color:#00b1b1;">{{oneuser.username}} </h4></span>
-              <span><p>Aspirant</p></span>            
+              <span><p>Chatsquare.Com</p></span>            
             </div>
             <div class="clearfix"></div>
             <hr style="margin:5px 0 5px 0;">
@@ -57,6 +56,7 @@
               
 
 <div class="col-sm-5 col-xs-6 tital " >E-Mail:</div><div class="col-sm-7">{{oneuser.mail}}</div>
+
   <div class="clearfix"></div>
 <div class="bot-border"></div>
 
@@ -65,7 +65,7 @@
  <div class="clearfix"></div>
 <div class="bot-border"></div>
 
-<div class="col-sm-5 col-xs-6 tital " >Date Of Birth:</div><div class="col-sm-7">{{oneuser.dob |  date:dd/MM/yyyy}}</div>
+<div class="col-sm-5 col-xs-6 tital " >Date Of Birth:</div><div class="col-sm-7">{{oneuser.dob |  date:mm/dd/yyyy}}</div>
 
   <div class="clearfix"></div>
 <div class="bot-border"></div>

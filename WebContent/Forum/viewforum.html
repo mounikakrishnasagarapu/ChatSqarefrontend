@@ -9,7 +9,8 @@
 <div class="container">
 <form role="form" data-ng-submit="submit()" class="form-horizontal"
 		 action="" data-ng-controller="forumctrl">
-		  <div class="form-group">
+		  <h2> View Forums</h2>
+		  <!-- <div class="form-group">
                     <label for="title" class="col-sm-3 control-label">Name</label>
                     <div class="col-sm-9">
 		<input type="text" data-ng-model="name" class="form-control" autofocus>
@@ -19,7 +20,6 @@
                     <div class="col-sm-9">
 		 <input type="text" data-ng-model="topic" class="form-control" autofocus> <br>
 		</div></div>	
-
 				  <div class="form-group">
                     <label for="title" class="col-sm-3 control-label">Description</label>
                     <div class="col-sm-9">
@@ -28,9 +28,11 @@
 		 <div class="form-group">
                     <div class="col-sm-9 col-sm-offset-3">
 			<button type="submit" class="btn btn-primary ">Save Forum</button>
-			</div></div>
-	</form>
+			</div></div> -->
+	
 	</div>
+	</form>
+	
 	<div class="container" style="padding-top:10px">
 	<div class="row">
         <div class="col-md-4 col-md-offset-3">
@@ -53,7 +55,8 @@
 	<p>{{forum.description}}</p>
 	<hr>
 	<button data-ng-show="forum.userid==globals.currentUser.username" data-ng-click="editforum(forum.id,forum.name,forum.topic,forum.description)" class="btn btn-success">Edit</button>
-	<button  data-ng-click="deleteforum(forum.id)" class="btn btn-primary btn-danger">Delete</button>
+	<button data-ng-show="forum.userid==globals.currentUser.username" data-ng-click="deleteforum(forum.id)" class="btn btn-primary btn-danger">Delete</button>
+	 <a href="#login"><button align="right" class="btn btn-primary" data-ng-click="like(blog.id)">Login To Comment This Forum</button> </a>
 	</div>
 	</div></div></div></div></div>
 	<script type="text/javascript" src="forumctrl.js"></script>

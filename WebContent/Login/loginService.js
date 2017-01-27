@@ -1,5 +1,5 @@
 app.factory('AuthenticationService', AuthenticationService);
-var BASE_URL = 'http://localhost:8088/CollaborationBackend';
+var BASE_URL = 'http://localhost:8088/CollaborationBackend/';
     AuthenticationService.$inject = ['$http', '$cookieStore', '$rootScope'];
     function AuthenticationService($http, $cookieStore, $rootScope) {
         var service = {};
