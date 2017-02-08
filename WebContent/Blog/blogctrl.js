@@ -1,6 +1,6 @@
 var app=angular.module("blogapp",[])
 app.controller('blogctrl', [ '$scope', '$http',function($scope, $http) {
-	var BASE_URL = 'http://localhost:8088/CollaborationBackend/';
+	var BASE_URL = 'http://localhost:8088/CollaborationBackend';
 
 	$scope.getAllBlogs= function() {
 		console.log("get all blogs")
